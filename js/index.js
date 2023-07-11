@@ -4,6 +4,8 @@ const body = document.querySelector("body");
 const themeButtonBackground = document.querySelector(".theme-buttons1")
 const appTheme = document.querySelector(".app-theme1")
 const totalWrapper = document.querySelector(".toggle-wrapper1") 
+//text
+const totalText = document.getElementById("total");
 // Header--------------------------------------------------------------------
 const toggleTheme = document.querySelectorAll(".toggle");
 
@@ -82,31 +84,78 @@ buttons.forEach((button) => {
 
 // Main body---------------------------------------------------------------------
 // buttons
-/*const buttons = document.querySelectorAll(".button");
 
+let numberArray = [];
+let numberString = "";
 
-function operators() {
+function operators(operator) {
     switch(operator){
         case "x":
-
+            console.log(operator)
             break;
         case "/":
-
+            console.log(operator)
             break;
         case "-":
-
+            console.log(operator)
             break;
         case "+":
-
+            console.log(operator)
+            break;
+        case "del":
+            console.log(operator)
+            numberArray.pop();
+            console.log(numberArray)
+            numberString = numberString.slice(0, -1)
+            console.log(numberString)
+            totalText.innerHTML = numberString;
+            break;
+        case "reset":
+            console.log(operator)
+            break;
+        case "=":
+            console.log(operator)
+            break;
+        default: 
             break;    
     }
 }
 
-buttons.forEach((button, i) => {
+function checkForDot(value) {
+    if(numberArray.filter((v) => (v === value)).length > 1) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+buttons.forEach((button) => {
     button.addEventListener("click", () => {
-        console.log(i)
-        console.log(button.value);
-        let n1 = "";
-        let n2 = "";
+        if(button.value == "del" || button.value == "+" || button.value == "-" || button.value == "x" || button.value == "/") {
+            operators(button.value);
+        } else if (button.value == ".") {
+            numberArray.push(button.value)
+            if (!checkForDot(button.value)) {
+                numberString = numberArray.join("");
+                totalText.innerHTML = numberString;
+            } else {
+                alert("Please don't enter anymore ' . ' into your calculation");
+                numberArray.pop();
+                numberString.substring(0, numberString.length-1)
+                console.log(numberString)
+                totalText.innerHTML = numberString;
+            }
+            console.log(checkForDot(button.value));
+        } else {
+            numberArray.push(button.value)
+            numberString = numberArray.join("");
+            totalText.innerHTML = numberString;
+        }
     })
-}) */
+})
+
+commandButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        operators(button.value);
+    })
+})
