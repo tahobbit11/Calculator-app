@@ -83,6 +83,288 @@
   /* ==========================================================================
      Author's custom styles
      ========================================================================== */
+
+     /* Basic Styles */
+     html {
+        font-size: 32px;
+     }
+
+     body {
+        font-family: 'League Spartan', sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+     }
+
+     .theme-background1 {
+      background-color: hsl(222, 26%, 31%);
+      color: white;
+     }
+
+     .theme-background2 {
+      background-color: hsl(0, 0%, 90%);
+      color: hsl(60, 10%, 19%);
+     }
+
+     .theme-background3 {
+      background-color: hsl(268, 75%, 9%);
+      color: hsl(52, 100%, 62%);
+     }
+
+     h1,
+     h2,
+     p {
+        margin: 0;
+     }
+
+     /* Header Styles */
+     header {
+        width: 90%;
+        padding-bottom: 20px;
+     }
+
+     .header-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+     }
+
+     .header-wrapper h1 {
+        font-size: 1.5em;
+     }
+
+     #theme-text {
+        font-size: .5em;
+        position: absolute;
+        right: 120px;
+        top: 45px;
+     }
+
+     .theme-numbers {
+        display: flex;
+     }
+
+     .theme-numbers p {
+        font-size: .5em;
+      }
+
+     .theme-numbers p:nth-last-of-type(2), .theme-numbers p:nth-last-of-type(3) {
+        padding-right: 13px;
+     }
+
+     .theme-buttons1 {
+      position: relative;
+      right: 10px;
+      background-color: hsl(223, 31%, 20%);
+      height: 25px;
+      width: 68px;
+      border-radius: 20px;
+     }
+
+     .theme-buttons2 {
+      position: relative;
+      right: 10px;
+      background-color: hsl(0, 5%, 81%);
+      height: 25px;
+      width: 68px;
+      border-radius: 20px;
+     }
+
+     .theme-buttons3 {
+      position: relative;
+      right: 10px;
+      background-color: hsl(268, 71%, 12%);
+      height: 25px;
+      width: 68px;
+      border-radius: 20px;
+     }
+
+     #first-toggle, #second-toggle, #third-toggle {
+      appearance: none;
+      cursor: pointer;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+     }
+
+     #first-toggle {
+      position: absolute;
+      top: 5px;
+      left: 6px;
+     }
+
+     #second-toggle {
+      position: absolute;
+      top: 5px;
+      left: 27px;
+     }
+
+     #third-toggle {
+      position: absolute;
+      top: 5px;
+      left: 48px;
+     }
+
+     input:nth-of-type(1):checked {
+      background-color: hsl(6, 63%, 50%);
+     }
+
+     input:nth-of-type(2):checked {
+      background-color: hsl(25, 98%, 40%);
+     }
+
+     input:nth-of-type(3):checked {
+      background-color: hsl(176, 100%, 44%);
+     }
+
+
+     /* Main Styles */
+
+     main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+     }
+
+     .content-wrapper {
+        width: 90%;
+     }
+
+     .total-wrapper {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        border-radius: 10px;
+        padding-right: 20px;
+        margin-bottom: 20px;
+     }
+
+     .toggle-wrapper1, .app-theme1 {
+      background-color: hsl(223, 31%, 20%);
+     }
+
+     .toggle-wrapper2 {
+      background-color: hsl(0, 0%, 93%);
+     }
+
+     .app-theme2 {
+      background-color: hsl(0, 5%, 81%);
+     }
+
+     .toggle-wrapper3, .app-theme3 {
+      background-color: hsl(268, 71%, 12%);
+     }
+
+     .calculator-app {
+        border-radius: 10px;
+        padding: 25px;
+     }
+
+     .inputs-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+     }
+
+     .button {
+        width: 20.1%;
+        height: 60px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        border: none;
+        cursor: pointer;
+     }
+
+     .button-theme1 {
+      background-color: hsl(30, 25%, 89%);
+      box-shadow: 0px 4px hsl(28, 16%, 65%);
+      color: hsl(221, 14%, 31%);
+     }
+
+     .button-theme1:nth-of-type(4) {
+      background-color: hsl(225, 21%, 49%);
+      box-shadow: 0px 4px hsl(224, 28%, 35%);
+      color: white;
+      font-size: .8em;
+     }
+
+     .button-theme2 {
+      background-color: hsl(45, 7%, 89%);
+      box-shadow: 0px 4px hsl(35, 11%, 61%);
+      color: hsl(60, 10%, 19%);
+     }
+
+     .button-theme2:nth-of-type(4) {
+      background-color: hsl(185, 42%, 37%);
+      box-shadow:0px 4px hsl(185, 58%, 25%);
+      color: white;
+      font-size: .8em;
+     }
+
+     .button-theme3 {
+      background-color: hsl(268, 47%, 21%);
+      box-shadow:0px 4px hsl(290, 70%, 36%);
+      color: hsl(52, 100%, 62%);
+     }
+
+     .button-theme3:nth-of-type(4) {
+      background-color: hsl(281, 89%, 26%);
+      box-shadow:0px 4px hsl(285, 91%, 52%);
+      color: white;
+      font-size: .8em;
+     }
+
+     .options-wrapper {
+        display: flex;
+        justify-content: space-between;
+     }
+
+     .button-command {
+        text-align: center;
+        font-size: .7em;
+        width: 47%;
+        height: 60px;
+        border: none;
+        border-radius: 5px;
+        padding: ;
+        cursor: pointer;
+     }
+
+     .button-command-theme1 {
+      background-color: hsl(225, 21%, 49%);
+      box-shadow: 0px 4px hsl(224, 28%, 35%);
+      color: white;
+     }
+
+     .button-command-theme1:nth-of-type(2) {
+      background-color: hsl(6, 63%, 50%);
+      box-shadow: 0px 4px hsl(6, 70%, 34%);
+     }
+
+     .button-command-theme2 {
+      background-color: hsl(185, 42%, 37%);
+      box-shadow: 0px 4px hsl(224, 28%, 35%);
+      color: white;
+     }
+
+     .button-command-theme2:nth-of-type(2) {
+      background-color: hsl(25, 98%, 40%);
+      box-shadow: 0px 4px hsl(25, 99%, 27%);
+     }
+
+     .button-command-theme3 {
+      background-color: hsl(281, 89%, 26%);
+      box-shadow: 0px 4px hsl(285, 91%, 52%);
+      color: white;
+     }
+
+     .button-command-theme3:nth-of-type(2) {
+      background-color: hsl(176, 100%, 44%);
+      box-shadow: 0px 4px hsl(177, 92%, 70%);
+      color: hsl(198, 20%, 13%);
+     }
   
   /* ==========================================================================
      Helper classes
