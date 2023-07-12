@@ -6,6 +6,7 @@ const appTheme = document.querySelector(".app-theme1")
 const totalWrapper = document.querySelector(".toggle-wrapper1") 
 //text
 const totalText = document.getElementById("total");
+const inputText = document.getElementById("input");
 // Header--------------------------------------------------------------------
 const toggleTheme = document.querySelectorAll(".toggle");
 
@@ -83,38 +84,77 @@ buttons.forEach((button) => {
 });
 
 // Main body---------------------------------------------------------------------
-// buttons
 
 let numberArray = [];
+let operatorArray = [];
 let numberString = "";
+let total = 0;
+
 
 function operators(operator) {
     switch(operator){
-        case "x":
-            console.log(operator)
+        case "*":
+            if(total === 0){
+                total = 1                
+            }
+            total = total * Number(numberString);
+            numberArray = [];
+            numberString = "";
+            totalText.innerHTML = total;
             break;
         case "/":
-            console.log(operator)
+            console.log(numberArray);
+            if(total === 0){
+                total = 1
+                total = Number(numberString) / total;                
+            } 
+            if(numberString == "") {
+                numberString == "1"
+                total = total / Number(numberString)
+            }
+            numberArray = [];
+            numberString = "";
+            totalText.innerHTML = total;
             break;
         case "-":
-            console.log(operator)
+            total = Number(numberString) - total;
+            numberArray = [];
+            numberString = "";
+            totalText.innerHTML = total;
             break;
         case "+":
-            console.log(operator)
+            total = total + Number(numberString);
+            numberArray = [];
+            numberString = "";
+            totalText.innerHTML = total;
             break;
         case "del":
-            console.log(operator)
             numberArray.pop();
-            console.log(numberArray)
             numberString = numberString.slice(0, -1)
-            console.log(numberString)
-            totalText.innerHTML = numberString;
+            inputText.innerHTML = numberString;
             break;
         case "reset":
-            console.log(operator)
+            numberArray = [];
+            operatorArray = [];
+            numberString = "";
+            total = 0;
+            totalText.innerHTML = total;
+            inputText.innerHTML = total;
             break;
         case "=":
-            console.log(operator)
+            if(operatorArray.slice(-1) == "*") {
+                total = total * Number(numberString);
+            } else if (operatorArray.slice(-1) == "/") {
+                total = total / Number(numberString);
+            } else if (operatorArray.slice(-1) == "-") {
+                total = total - Number(numberString);
+            } else if (operatorArray.slice(-1) == "+"){
+                total = total + Number(numberString);
+            }
+            operatorArray = [];
+            console.log(numberString)
+            console.log(numberArray)
+            totalText.innerHTML = total;
             break;
         default: 
             break;    
@@ -131,25 +171,28 @@ function checkForDot(value) {
 
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
-        if(button.value == "del" || button.value == "+" || button.value == "-" || button.value == "x" || button.value == "/") {
+        console.log(numberArray);
+        if(button.value == "del" || button.value == "") {
+            operators(button.value);
+        } else if (button.value == "+" || button.value == "-" || button.value == "*" || button.value == "/") {
+            operatorArray.push(button.value);
             operators(button.value);
         } else if (button.value == ".") {
-            numberArray.push(button.value)
+            numberArray.push(button.value);
             if (!checkForDot(button.value)) {
                 numberString = numberArray.join("");
-                totalText.innerHTML = numberString;
+                inputText.innerHTML = numberString;
             } else {
                 alert("Please don't enter anymore ' . ' into your calculation");
                 numberArray.pop();
                 numberString.substring(0, numberString.length-1)
                 console.log(numberString)
-                totalText.innerHTML = numberString;
+                inputText.innerHTML = numberString;
             }
-            console.log(checkForDot(button.value));
         } else {
             numberArray.push(button.value)
             numberString = numberArray.join("");
-            totalText.innerHTML = numberString;
+            inputText.innerHTML = numberString;
         }
     })
 })
