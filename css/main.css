@@ -235,12 +235,12 @@
 
      .total-wrapper {
         height: 90px;
+        text-align: right;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-end;
         border-radius: 10px;
-        padding-right: 20px;
         margin-bottom: 20px;
      }
 
@@ -262,17 +262,32 @@
 
      #total {
       position: relative;
-      top: 15px;
-      right:-8px;
+      top: 5px;
+      right: -px;
       color: darkgray;
+      width: 100%;
+      overflow: scroll;
      }
 
      #input {
       position: relative;
-      bottom: 0px;
-      right: -15px;
+      bottom: 5px;
+      right: 0px;
       font-size: 1.75em;
+      width: 100%;
+      overflow: scroll;
      }
+
+     *::-webkit-scrollbar{/*the size of the scrollbar*/
+      width: 5px;
+      height: 5px;  
+      }
+      *::-webkit-scrollbar-track{
+      background: rgba(0,0,0,0.2); /*the background color of the scroll track*/
+      }
+      *::-webkit-scrollbar-thumb{
+      background: rgba(0,0,0,0.2); 
+      }
 
      .calculator-app {
         border-radius: 10px;
