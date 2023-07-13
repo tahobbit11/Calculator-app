@@ -97,6 +97,9 @@ function operators(operator) {
             if(total === 0){
                 total = 1                
             }
+            if(numberString == ""){
+                numberString = "1";
+            }
             total = total * Number(numberString);
             numberArray = [];
             numberString = "";
@@ -109,7 +112,8 @@ function operators(operator) {
                 total = Number(numberString) / total;                
             } 
             if(numberString == "") {
-                numberString == "1"
+                numberString = "1"
+                console.log(numberString);
                 total = total / Number(numberString)
             }
             numberArray = [];
@@ -152,6 +156,7 @@ function operators(operator) {
                 total = total + Number(numberString);
             }
             operatorArray = [];
+            numberString = "";
             console.log(numberString)
             console.log(numberArray)
             totalText.innerHTML = total;

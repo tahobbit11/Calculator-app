@@ -121,6 +121,7 @@
      /* Header Styles */
      header {
         width: 90%;
+        max-width: 473px;
         padding-bottom: 20px;
      }
 
@@ -137,8 +138,8 @@
      #theme-text {
         font-size: .5em;
         position: absolute;
-        right: 120px;
         top: 45px;
+        right: 30%;
      }
 
      .theme-numbers {
@@ -229,6 +230,7 @@
 
      .content-wrapper {
         width: 90%;
+        max-width: 540px;
      }
 
      .total-wrapper {
@@ -466,6 +468,16 @@
   
   @media only screen and (min-width: 768px) {
     /* Style adjustments for viewports that meet the condition */
+    header {
+      max-width: 540px;
+    }
+
+    #theme-text {
+      position: relative;
+      top: 0;
+      left: 150px;
+    }
+
     .content-wrapper {
       width: 540px;
     }
@@ -480,6 +492,11 @@
 
     #input {
       font-size: 2em;
+    }
+
+    .button {
+      width: 100px;
+      margin-bottom: 20px;
     }
   }
   
